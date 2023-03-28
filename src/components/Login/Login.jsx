@@ -20,30 +20,40 @@ export default function SignUp() {
   return (
     <div className="main">
       <div className="content">
-        <img className="photo" src="./photo.jpg" alt="x" />
-        <form onSubmit={submitHandler} className="form">
-          <img
-            style={{
-              width: '156px',
-              height: '156px',
-              marginTop: '50px',
-              marginBottom: '90px',
-            }}
-            src="./logoReg.png"
-            alt=""
-          />
-          <p style={{ marginBottom: '90px' }} className="title">Авторизация</p>
-          <div>
-            <input className="input" placeholder="Почта" name="email" value={input.email} onChange={inputHandler} type="email" required />
-          </div>
-          <div>
-            <input className="input" placeholder="Пароль" name="password" value={input.password} onChange={inputHandler} type="password" required />
-          </div>
-          <button className="button" type="submit">Войти</button>
-          <br />
-          У вас нет аккаунта?
-          <NavLink to="/register" style={{ color: 'blue', textDecoration: 'none' }}> Зарегистрироваться</NavLink>
-        </form>
+        <div className="loginPhotoHolder">
+          <img className="photo" src="./photo.jpg" alt="x" />
+        </div>
+        <div className="form-view">
+          <form onSubmit={submitHandler} className="form">
+            <img
+              className="logo-login"
+              src="./logoReg.png"
+              alt=""
+            />
+            <p className="title">Авторизация</p>
+            <div className="input-group">
+              {/* eslint-disable jsx-a11y/label-has-associated-control */}
+              <input className="input" placeholder=" " name="email" value={input.email} onChange={inputHandler} type="email" required />
+              <span className="highlight" />
+              <span className="bar" />
+              <label htmlFor="email">Почта</label>
+            </div>
+            <div className="input-group">
+              {/* eslint-disable jsx-a11y/label-has-associated-control */}
+              <input className="input" placeholder=" " name="password" value={input.password} onChange={inputHandler} type="password" required />
+              <span className="highlight" />
+              <span className="bar" />
+              <label htmlFor="password">Пароль</label>
+            </div>
+            <button className="button" type="submit">Войти</button>
+            <br />
+            <div className="register-text">
+              У вас нет аккаунта?
+              <NavLink to="/register" style={{ color: 'blue', textDecoration: 'none' }}> Зарегистрироваться</NavLink>
+            </div>
+          </form>
+        </div>
+
       </div>
     </div>
   );
