@@ -27,7 +27,9 @@ export default function RegisterUser() {
   return (
     <div className="main">
       <div className="content">
-        <img className="photo" src="./photo.jpg" alt="x" />
+        <div className="loginPhotoHolder">
+          <img className="photo" src="./photo.jpg" alt="x" />
+        </div>
         <form onSubmit={submitHandler} className="form">
           <img style={{ width: '156px', height: '156px', marginTop: '50px' }} src="./logoReg.png" alt="" />
           <p className="title">Регистрация</p>
